@@ -1,0 +1,197 @@
+O que é uma amostra?
+
+Uma amostra é uma parte da população selecionada para participar da análise.
+
+ex: Uma empresa possui:
+100.000 usuários
+e seleciona:
+1.000 usuários
+para realizar uma pesquisa
+
+então população 100.000 -> seleção -> amostra 1.000
+
+A amostra deve representar, da melhor maneira possível, as características da população
+
+população x amostra
+
+população é o conjunto completo
+amostra é uma parte do conjunto
+
+A amostra é mais facil de se analisar do que a amostra
+
+Censo é o estudo sobre o conjunto inteiro "A população inteira".
+
+---
+
+Parâmetro e Estatística
+
+Esses dois conceitos são fundamentais
+
+Parâmetro
+
+É uma medida calculada utilizando toda a população
+
+ex: Média real da idade de todos os alunos da instituição
+
+Estatística
+
+É uma medida calculada utilizando uma amostra.
+
+Ex: Média da idade de 200 alunos selecionados.
+
+Exemplo:
+
+Imagine uma população:
+
+10,20,30,40,50
+
+A média da população é y=10+20+30+40+50/5 y=30
+
+Nesse caso, 30 é um parâmetro populacional.
+
+Agora selecionamos uma amostra:
+
+20,30,50
+
+A média da amostra é: x=2+30+50/3 x=33,33
+
+----
+
+Por que uma amostra pode representar uma população?
+
+Imagine uma caixa contendo:
+
+100.000 registros
+
+Se os registros estiverem distribuidos de maneira adequada, uma amostra aleatória pode apresentar características semelhantes às da população
+
+ex:
+população - media = 72,4
+
+Amostra - media 72,1
+
+Quanto mais adequada for a amostra, maior a possibilidade de obter uma boa estimativa da população.
+
+O Problema da amostragem
+
+A qualidade da conclusão depende da qualidade da amostra
+
+---
+
+Amostragem Aleatória Simples
+
+Na amostragem aleatória simples, todos os elementos da população
+possuem a mesma oportunidade de serem selecionados
+
+ex:
+população: 12345678910
+
+Selecionar aleatoriamente: 258
+
+Cada elemento tinha possibilidade de participar
+
+---
+
+Reprodutibilidade
+
+Em ciências de Dados, muitas vezes precisamos conseguir reproduzir o mesmo experimento.
+
+Podemos utilizar uma semente aleatória (seed)
+
+Executando novamente com a mesma seed, obteremos a mesma seleção
+
+
+Por que isso é importante?
+
+Porque permite:
+
+* reproduzir experimentos
+* comparar resultados
+* testar programas
+* documentos análises
+* facilitar pesquisas
+
+---
+
+Amostragem Sistemática
+
+Na amostragem Sistemática, slecionamos elementros seguindo um intervalo.
+
+ex: Temos 1000 registros
+Queremos selecionar 100
+onde: N = tamanho da população - n = tamanho da amostra
+podemos utilizar um intervalo:
+
+k= N/n k=1000/100 = 10
+
+Nesse caso: Podemos selecionar, por Exemplo: 10, 20, 30, 40, 50...
+
+---
+
+Amostragem Estratificada
+
+Na amostragem estratificada, dividimos a população em grupos chamados estratos e selecionamos indivíduos de cada grupos
+
+ex: Uma instituição possui:
+
+Curos: DSM:500 - Processos gerenciais:300 - Gestão empresarial:200
+
+Se queremos uma amostra de 100 alunos, podemos selecionar proporcionalmente:
+
+DSM -> 50
+processos genrenciais -> 30
+Gestão empresarial -> 20
+
+Assim, cada grupo é representado
+
+---
+
+Amostragem por Conglomerados
+
+Na amostragem por Conglomerados, a população é dividida em grupos naturais.
+
+Em vez de selecionar indivíduos espalhamos pela população, selecionamos alguns grupos inteiros.
+
+ex: uma rede possui: 100 escolas
+
+podemos selecionar aleatoriamente: 10 escolas e analisar os alunos dessas escolas.
+
+---
+
+Comparando as técnicas
+
+Aleatória simples: Todos possuem chance semelhante de seleção
+
+Sistemática: Seleção seguindo intervalos
+
+Estratificada: Divide a população em grupos e seleciona de cada grupo
+
+Conglomerados: Seleciona grupos inteiros
+
+----
+
+Comparando população com amostra
+
+A média da amostra não precisa ser exatamente igual à média da população.
+
+Isso ocorre porque estamos analisando apenas uma parte dos dados.
+
+----
+
+Erro Amostral
+
+A amostra produziu uma estimativa que ficou 2 unidades distante do parâmentro populacional.
+
+Importante: erro amotral não significa necessariamente que houve  um erro no programa ou no calculo.
+
+É uma consequência de trabalharmos com uma amostra
+
+----
+
+Tamanho da amostra
+
+Em geral, aumentar o tamanho da amostra tende a produzir estimativas mais estáveis.
+
+Não significa que a amostra maior será automaticamente perfeita, ela geralmente fornece mais informalção sobre a população
+
+A qualidade da seleção continua sendo fundamental.
