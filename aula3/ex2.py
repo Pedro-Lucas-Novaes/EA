@@ -1,4 +1,5 @@
 import pandas as pd
+
 alunos = pd.DataFrame({
  "Nome": [
  "Ana", "Bruno", "Carlos", "Daniela",

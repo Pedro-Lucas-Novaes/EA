@@ -1,0 +1,127 @@
+Dados Brutos = Dados desorganizados
+
+O que é frequência? = A frequência indica quantas vezes determinado valor aparece nos dados.
+
+Frequência Absoluta = A Frequência Absoluta é simplesmente a quantidade de vezes que um valor aparece.
+
+Frequência Relativa = A frequência relativa representa a proporção de cada valor em relação ao total.
+
+Frequência Acumulada = A frequência acumulada soma progressivamente as frequências anteriores.
+
+------
+
+value_counts() = ele conta quantas vezes cada valor aparece
+
+Podemos ordenar por valor = serie.value_counts().sort_index()
+Agora os valores aparecem em ordem crescente.
+
+Frequência relativa com Python = serie.value_counts(normalize=True)
+Para transformar em porcentagem:
+serie.value_counts(normalize=True) * 100
+
+Frequência acumulada = Podemos calcular:
+frequencia = serie.value_counts().sort_index()
+frequencia_acumulada = frequencia.cumsum()
+print(frequencia_acumulada)
+
+------
+
+Frequencia absoluta = qtd de vezes que o elemento aparece
+
+Frequencia Relativa = qts de vezes / pelo total
+
+Frequencia Acumulada = somatório das frequencias
+
+O que é uma variável categórica?
+
+Nem todos os dados são números.
+
+Exemplo:
+Python
+Java
+JavaScript
+Python
+C#
+Python
+
+O que é uma variável categórica?
+Esses dados representam categorias.
+Podemos contar quantas vezes cada linguagem aparece.
+
+linguagens.value_counts()
+
+--------
+
+Matplotlib = Uma das principais bibliotecas Python para gráficos
+
+O que cada comando faz = 
+plt.bar() - Cria um gráfico de barras.
+plt.xlabel() - Define o nome do eixo X.
+plt.ylabel() - Define o nome do eixo Y.
+plt.title() - Define o título.
+plt.show() - Exibe o gráfico.
+
+----
+
+Histograma = O histograma é especialmente importante em Estatística.
+Ele mostra como os valores numéricos estão distribuídos em intervalos
+
+----
+
+Histograma × Gráfico de barras
+
+Essa diferença é importante.
+Gráfico de barras
+Normalmente utilizado para:
+● categorias;
+● valores discretos;
+● comparação entre grupos.
+
+Histograma
+Utilizado para:
+● dados numéricos;
+● distribuição;
+● intervalos de valores.
+
+O histograma é usado principalmente para mostrar a distribuição de uma variável numérica, 
+agrupando os valores em intervalos (bins).
+
+----
+
+Boxplot
+
+Ele permite visualizar:
+● mediana;
+● quartis;
+● dispersão;
+● possíveis valores extremos.
+
+----
+
+Outliers
+
+Um outlier é uma observação que se distancia consideravelmente do comportamento 
+predominante dos dados.
+
+Exemplo:
+120
+125
+130
+128
+122
+127
+900
+
+Em Computação, isso poderia representar:
+● uma falha;
+● sobrecarga;
+● ataque;
+● problema de rede;
+● erro de medição;
+● comportamento excepcional
+
+O valor: 900 é muito diferente dos demais.
+
+----
+
+
