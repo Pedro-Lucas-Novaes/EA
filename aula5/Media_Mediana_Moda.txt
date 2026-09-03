@@ -1,0 +1,581 @@
+Média Aritmética
+
+Representa a soma total dividida igualmente 
+pela quantidade.
+• Exemplo Rápido: Notas 10, 20 e 30.
+• Cálculo: (10 + 20 + 30) / 3 = 60 / 3 = 20.
+• A média do conjunto é 20.
+• É a medida de tendência central mais comum e 
+intuitiva
+
+
+Resolução Passo a Passo:
+1. Somar todos os valores disponíveis:
+ 8 + 7 + 9 + 6 + 10 = 40
+2. Identificar o tamanho do conjunto (n):
+ n = 5 observações
+3. Dividir a soma pela quantidade (n):
+ 40 / 5 = 8
+Média final do grupo = 8.0
+
+----
+
+Média no Python Puro
+
+# Exemplo de cálculo em Python puro
+notas = [8, 7, 9, 6, 10]
+# Somando e dividindo manualmente
+soma = sum(notas)
+quantidade = len(notas)
+media = soma / quantidade
+print(media)
+# Saída esperada: 8.0
+
+• Podemos utilizar as funções embutidas do 
+Python puro para replicar exatamente a 
+fórmula matemática.
+• sum(notas): realiza a somatória de todos os 
+elementos na lista.
+• len(notas): descobre a quantidade de 
+elementos (n) na lista.
+• Útil para entender a lógica algorítmica por 
+trás da média antes de usar bibliotecas de 
+análise de dados.
+
+----
+
+Média utilizando Pandas
+
+• O Pandas possui um método interno 
+muito eficiente para este cálculo: .mean()
+• É uma das funções estatísticas 
+fundamentais mais utilizadas na 
+manipulação de Series.
+• Internamente, o Pandas otimiza o 
+processamento e lida com eventuais 
+valores nulos (NaN) automaticamente se 
+configurado 
+
+----
+
+Média usando describe()
+
+import pandas as pd
+notas = pd.Series([8, 7, 9, 6, 
+10])
+# Exibindo o resumo estatístico 
+completo
+print(notas.describe())
+
+----
+
+O Efeito dos Valores Extremos
+
+Um único valor discrepante pode distorcer completamente o comportamento da média de um 
+conjunto.
+
+CONJUNTO A
+• Dados: 10, 10, 10, 10, 10
+• Média: 10.0
+• Todos os elementos são idênticos, a 
+média representa com perfeição a 
+totalidade do conjunto de dados.
+
+CONJUNTO B
+• Dados: 10, 10, 10, 10, 100
+• Média: 28.0
+• O único valor extremo (100) puxou a 
+média fortemente para cima, tornando-a 
+pouco representativa da realidade.
+• Termo estatístico: Esse valor extremo é 
+conhecido como Outlier
+
+----
+
+Média Aritmética:
+
+----
+
+Mediana
+
+• A mediana é o valor que ocupa a posição 
+central quando os dados estão ordenados de 
+forma crescente (ou decrescente).
+• Representa o ponto que divide o conjunto de 
+dados exatamente ao meio: 50% dos dados 
+estão abaixo e 50% estão acima.
+• Exemplo simples: Conjunto [3, 5, 7, 9, 11]
+• Já está ordenado. O valor central é o 7.
+• Mediana = 7.
+
+----
+
+Mediana com Quantidade Ímpar
+
+Identificando o Centro:
+• Para conjuntos com quantidade ímpar de 
+elementos (n), existe exatamente uma única 
+posição central.
+• Fórmula da posição central: Pos = (n + 1) / 2
+• Para n = 5: Pos = (5 + 1) / 2 = 3ª posição.
+• Na sequência ordenada: 10, 20, [30], 40, 50.
+• O terceiro valor é o 30.
+Mediana = 30
+
+----
+
+Mediana Impar: n+1/2
+
+----
+
+Mediana com Quantidade Par
+
+Resolução para Quantidade Par:
+• Quando n é par, não temos um elemento 
+central isolado.
+• Identificamos os dois valores centrais (nas 
+posições n/2 e (n/2) + 1).
+• Calculamos a média aritmética simples 
+desses dois valores do meio.
+• Cálculo: (20 + 30) / 2 = 50 / 2 = 25.
+Mediana final = 25.0
+
+----
+
+Mediana Par: n/2 + (n/2+1)/2
+
+----
+
+Mediana no Python
+
+import pandas as pd
+# Definindo o conjunto de notas
+notas = pd.Series([8, 7, 9, 6, 10])
+# Calculando a mediana diretamente
+mediana = notas.median()
+print(mediana)
+# Saída esperada: 8.0
+
+• O Pandas possui o método direto .median() 
+para cálculo da mediana de Series e 
+DataFrames.
+• O Pandas cuida da ordenação dos dados e da 
+aplicação das regras para quantidades ímpares 
+ou pares de forma 100% automatizada.
+• É uma forma segura e extremamente rápida 
+de descobrir o centro real dos dados.
+
+----
+
+Média × Mediana: Análise Comparativa
+
+Veja a diferença de sensibilidade de cada medida frente ao conjunto de dados com valor discrepante 
+[10, 10, 10, 10, 100]:
+
+MÉDIA ARITMÉTICA
+• Valor calculado: 28.0
+• Sensibilidade: Extremamente ALTA.
+• Distorção: Sofreu influência do outlier 
+(100) e acabou ficando distante da imensa 
+maioria dos dados (que valem 10).
+
+MEDIANA (VALOR ROBUSTO)
+• Valor calculado: 10.0
+• Sensibilidade: Praticamente NULA.
+• Distorção: Ignorou a magnitude do 
+outlier e manteve-se fiel à região de 
+concentração real da maioria dos dados 
+(10)
+
+----
+
+Quando utilizar a Mediana?
+
+Exemplo Clássico: Salários da 
+Empresa
+ • Func. 1: R$ 2.000
+ • Func. 2: R$ 2.100
+ • Func. 3: R$ 2.200
+ • Func. 4: R$ 2.300
+ • Diretor: R$ 20.000
+
+ Análise Estatística Aplicada:
+Média salarial = R$ 5.720
+Mediana salarial = R$ 2.200
+• Apenas o salário do Diretor puxa a média 
+para R$ 5.720. Nenhum funcionário comum 
+ganha perto disso.
+• A mediana (R$ 2.200) representa com muito 
+mais fidelidade a remuneração de um 
+trabalhador típico.
+• Regra de Ouro: Sempre utilize a mediana 
+quando houver assimetria forte ou outliers
+
+----
+
+Moda
+
+• A moda (Mo) é a medida de tendência central que 
+indica o valor mais frequente ou comum de um 
+conjunto.
+• Em palavras simples: é o valor que 'está na moda', ou 
+seja, o que mais se repete.
+• Exemplo de conjunto:
+ [2, 3, 3, 4, 5]
+• O número 3 aparece duas vezes, enquanto todos os 
+outros aparecem apenas uma.
+• Portanto: Moda = 3.
+
+Representação de Contagem:
+ Valor 2 -> 1 ocorrência
+ Valor 3 -> 2 ocorrências (Vencedor)
+ Valor 4 -> 1 ocorrência
+ Valor 5 -> 1 ocorrência
+
+----
+
+Moda no Python
+
+import pandas as pd
+# Definindo o conjunto de dados
+dados = pd.Series([2, 3, 3, 4, 5])
+# Calculando a moda
+moda = dados.mode()
+print(moda)
+# Saída esperada:
+
+• O Pandas calcula a moda por meio do 
+método .mode() de Series ou DataFrames.
+• Importante: A saída do método .mode() é 
+sempre uma Series do Pandas (e não um 
+único número).
+• Isso acontece porque um conjunto de 
+dados pode possuir mais de uma moda 
+simultaneamente, como veremos a seguir
+
+----
+
+Mais de uma Moda (Conjunto Bimodal)
+
+• Um conjunto de dados pode ter mais de uma moda 
+se dois ou mais valores empatarem em frequência 
+máxima.
+• Exemplo de conjunto de dados:
+ [1, 1, 2, 2, 3]
+• Contagem das ocorrências:
+ - Valor 1 aparece 2 vezes
+ - Valor 2 aparece 2 vezes
+ - Valor 3 aparece 1 vez
+• Temos duas modas empatadas: 1 e 2.
+• Esse conjunto é chamado de Bimodal.
+
+Classificações Estatísticas:
+• Unimodal: Possui apenas uma única moda.
+• Bimodal: Possui exatamente duas modas.
+• Multimodal: Possui três ou mais modas no 
+conjunto.
+• Amodal: Não possui moda (todos os 
+valores ocorrem a mesma quantidade de 
+vezes, ex: [1, 2, 3, 4])
+
+----
+
+Moda Amodal: Quando não tem moda
+
+Moda Unimodal: Possui apenas uma única moda.
+
+Moda Bimodal: Possui exatamente duas modas.
+
+Moda Multimodal: Possui três ou mais modas no 
+conjunto.
+
+Quando a Moda é Útil?
+
+• A moda é especialmente interessante para a 
+análise de dados categóricos (não-numéricos).
+• Diferente da média e mediana, que exigem 
+operações matemáticas e ordenação numérica, a 
+moda funciona por contagem de ocorrências.
+• Considere o conjunto de sistemas operacionais 
+de servidores:
+ ['Windows', 'Linux', 'Windows', 'macOS', 
+'Windows', 'Linux']
+• A moda do conjunto é: 'Windows' (aparece 3 
+vezes).
+
+----
+
+Comparando as Três Medidas
+
+MÉDIA Ponto de equilíbrio (soma dividida pela 
+quantidade).
+Alta (fortemente influenciada por 
+extremos).
+
+
+MEDIANA: O valor central que divide o conjunto 
+ordenado ao meio.
+Baixa / Nula (extremamente 
+robusta).
+
+
+MODA: O valor que aparece com maior 
+frequência no conjunto.
+Nula (depende apenas da 
+contagem simples).
+
+----
+
+Exemplo Completo
+
+Conjunto de dados para análise:
+2, 3, 3, 4, 8 (n = 5)
+• Média: (2 + 3 + 3 + 4 + 8) / 5 = 20 / 5 = 4.0
+• Mediana: Posição central na sequência 
+ordenada [2, 3, (3), 4, 8] -> Mediana = 3.0
+• Moda: O número que mais se repete (3) -> 
+Moda = 3.0
+
+Resultados Consolidados:
+MÉDIA: 
+4.0
+MEDIANA: 
+3.0
+MODA: 
+3.0
+
+----
+
+Python: As Três Medidas Unidas
+
+import pandas as pd
+# Definindo a Series com os dados
+dados = pd.Series([2, 3, 3, 4, 8])
+# Imprimindo as três medidas
+print('Média:', dados.mean())
+print('Mediana:', dados.median())
+print('Moda:')
+print(dados.mode())
+# Saídas: Média=4.0, Mediana=3.0, 
+Moda=3.0
+
+• Este código unificado resume o fluxo 
+completo de cálculo estatístico de 
+tendência central com Pandas.
+• O Pandas lida de forma transparente 
+com as estruturas de dados, permitindo 
+extrair resumos eficientes para relatórios 
+gerenciais.
+• Próxima etapa: O que acontece quando 
+os dados possuem importâncias 
+diferentes?
+
+----
+
+Média Ponderada
+
+----
+
+Média Ponderada: Mp = (6.5+8.3+10.1+10.1)/5+3+1+1
+
+Mp = 30+24+10+10/10
+
+74/10 = 7,4
+
+----
+
+Média Ponderada no Python Puro
+
+# Exemplo em Python estruturado
+notas = [8, 7, 10]
+pesos = [3, 2, 5]
+# Utilizando compreensão de lista e 
+zip()
+numerador = sum(
+ nota * peso
+ for nota, peso in zip(notas, pesos)
+)
+denominador = sum(pesos)
+media_pond = numerador / denominador
+print(media_pond)
+# Saída esperada: 8.8
+
+• A função embutida zip() une as listas 
+de notas e pesos elemento a 
+elemento.
+• Através da compreensão de listas, 
+calculamos as multiplicações de forma 
+direta antes de realizar a somatória.
+• Uma solução elegante e compacta 
+sem depender de pacotes externos
+
+----
+
+Média Ponderada com NumPy
+
+import numpy as np
+notas = [8, 7, 10]
+pesos = [3, 2, 5]
+# Utilizando a função np.average()
+media_pond = np.average(
+ notas,
+ weights=pesos
+)
+print(media_pond)
+# Saída esperada: 8.8
+
+• A biblioteca científica NumPy possui o 
+método np.average() projetado 
+especificamente para este cálculo.
+• O parâmetro weights= permite associar 
+um array ou lista de pesos 
+correspondentes.
+• Padrão da indústria para ciência de 
+dados, machine learning e 
+processamento de matrizes 
+multidimensionais pesadas
+
+----
+
+Aplicação Estatística na Computação
+
+Imagine tempos de resposta de requisições:
+Latência: 100 ms
+Latência: 110 ms
+Latência: 120 ms
+Latência: 130 ms
+Latência: 5.000 ms 
+(Anomalia/Timeout)
+
+• Se calcularmos apenas a média simples, o 
+valor será fortemente puxado para 1.092 ms 
+por causa do timeout.
+• Esse valor diria que o sistema é lento, 
+embora 4 das 5 requisições sejam 
+extremamente rápidas.
+• Em análise de desempenho de software real, 
+precisamos conjugar média, mediana, 
+distribuição e percentis.
+• Não existe uma única medida perfeita para 
+todos os cenários!
+
+----
+
+Um Exemplo Realista (Dois Servidores)
+
+
+SERVIDOR A
+• Tempos: 100, 101, 102, 103, 104 ms
+• Média: 102.0 ms
+• Mediana: 102.0 ms
+• Comportamento: Extremamente 
+estável e previsível. Quase sem 
+dispersão.
+
+SERVIDOR B
+• Tempos: 50, 80, 100, 150, 500 ms
+• Média: 176.0 ms
+• Mediana: 100.0 ms
+• Comportamento: Instável, com 
+presença de anomalias (500 ms). 
+Embora a mediana seja parecida, o 
+comportamento é completamente 
+oposto
+
+----
+
+CONJUNTO DE DADOS PARA ANÁLISE:
+tempos = pd.Series([120, 130, 125, 140, 120, 150, 125, 120, 135, 125])
+
+Instruções / Tarefas a resolver em Python:
+
+1. Calcular a Média Aritmética simples.
+129
+
+2. Calcular a Mediana dos tempos registrados.
+125
+
+3. Calcular a Moda (ou modas) deste conjunto.
+Bimodal(120, 125)
+
+4. Calcular os valores Mínimo e Máximo observados.
+min 120 /max 150 
+
+5. Refletir: Qual dessas medidas melhor representa o comportamento central dos dados?
+
+A Mediana
+
+----
+
+CONJUNTO DE DADOS PARA ANÁLISE:
+notas = pd.Series([7, 8, 6, 9, 7, 5, 8, 7, 10, 6, 8, 9, 7, 5, 6, 8, 7, 
+9, 8, 10])
+
+Instruções / Tarefas a resolver em Python:
+
+1. Calcule a Média, a Mediana e a Moda das notas dos 20 alunos listados.
+
+MEDIA = 7,5 
+
+MEDIANA = 7,5
+
+MODA = 7 e 8
+
+2. Extraia o valor mínimo e máximo do conjunto usando Pandas.
+
+min 5 e maior 10
+
+3. Discorra: Qual das três medidas estatísticas calculadas é a mais adequada para 
+representar as notas da classe? Justifique matematicamente.
+
+MEDIA ou MEDIANA
+
+----
+
+CONJUNTO DE DADOS PARA ANÁLISE:
+salarios = pd.Series([2000, 2100, 2200, 2300, 2400, 2500, 2600, 2700, 
+2800, 20000])
+
+Instruções / Tarefas a resolver em Python:
+
+1. Calcule a Média, a Mediana e a Moda dos salários acima utilizando Pandas.
+
+Media: 4160
+
+Mediana: 2450
+
+Moda: Amodal
+
+2. A média salarial representa bem a realidade da maioria dos funcionários comum?
+
+Não
+
+3. Explique o que aconteceu por conta do salário de R$ 20.000 (Diretor) e qual medida 
+representa melhor o salário típico
+
+Mediana
+
+----
+
+CONJUNTO DE DADOS PARA ANÁLISE:
+tempos = pd.Series([100, 105, 110, 108, 115, 120, 125, 130, 500, 550])
+
+Instruções / Tarefas a resolver em Python:
+
+1. Calcule a Média, Mediana, Moda, Mínimo e Máximo dos tempos de resposta.
+
+
+
+2. Escreva códigos para criar um Histograma e um Boxplot desses dados utilizando Matplotlib.
+
+3. Os valores extremos de 500 ms e 550 ms alteraram de forma relevante o valor da média? E o 
+da mediana?
+
+
+
+
+
+
+
+
+
