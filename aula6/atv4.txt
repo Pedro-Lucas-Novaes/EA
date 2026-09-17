@@ -1,0 +1,6 @@
+n(omega) = 5000
+n("erro") = 150
+
+4a = P(erro) = n(erro)/n(omega) = 150/5000 = 0,03 ou 3%
+
+4b = 1-P(erro) = 1-0,03 = 0,97 ou 97%

@@ -1,0 +1,5 @@
+1a -> omega = {cara, coroa} e n(omega) = 2
+
+1b -> P (cara) = n/omega = 1/2 = 0,5 -> 50%
+
+1c -> n(coroa)/n(omega) = 1/2 = 0,5 ou 50%
